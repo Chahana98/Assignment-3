@@ -20,14 +20,14 @@
                 <span asp-validation-for="Student.Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.Gender" class="control-label"></label>
+                <label asp-for="Student.Gender" class="control-label">Gender :</label> <br>
 
-                <label>
+                <label> 
                     <input type="radio" asp-for="Student.Gender" value="Male" /> Male
-                </label>
+                </label> <br>
                 <label>
                     <input type="radio" asp-for="Student.Gender" value="Female" /> Female
-                </label>
+                </label> <br>
                  <label>
                     <input type="radio" asp-for="Student.Gender" value="Others" /> Others
                 </label>
@@ -45,16 +45,30 @@
                 <label asp-for="Student.Photo" class="control-label"></label>
                 <input asp-for="Student.Photo" class="form-control" />
                 <span asp-validation-for="Student.Photo" class="text-danger"></span>
+            </div> <br>
+            <div class="form-group">
+                <label asp-for="Student.StartDate" class="control-label"></label>
+                <input asp-for="Student.StartDate" class="form-control" />
+                <span asp-validation-for="Student.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.EndDate" class="control-label"></label>
+                <input asp-for="Student.EndDate" class="form-control" />
+                <span asp-validation-for="Student.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Student.IsActive" checked /> @Html.DisplayNameFor(model => model.Student.IsActive)
+                </label>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                 <a asp-page="Index" class="btn btn-primary">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+
 
 

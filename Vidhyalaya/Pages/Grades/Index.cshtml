@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.SessionYear)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Label">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Label">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Label">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Label" class="btn btn-warning"><i class="bi bi-pen"></i>Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.Label" class="btn btn-success"><i class="bi bi-eye-fill"></i>Details</a>
+                <a asp-page="./Delete" asp-route-id="@item.Label" class="btn btn-danger"><i class="bi bi-trash3"></i>Delete</a>
             </td>
         </tr>
 }
