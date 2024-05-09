@@ -4,11 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<VidhyalaDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("VidhyalaDbContext") ?? throw new InvalidOperationException("Connection string 'VidhyalaDbContext' not found.")));
-
 builder.Services.AddDbContext<VidhyalayaDbContext>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
