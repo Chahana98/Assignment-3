@@ -6,6 +6,10 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Id</th>
+             <th>
+                @Html.DisplayNameFor(model => model.Grade[0].Label)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Grade[0].ClassTeacher)
             </th>
@@ -22,8 +26,15 @@
         </tr>
     </thead>
     <tbody>
+        @{int counter = 1;}
 @foreach (var item in Model.Grade) {
         <tr>
+            <th scope="row">
+                @(counter++)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Label)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ClassTeacher)
             </td>
@@ -37,9 +48,9 @@
                 @Html.DisplayFor(modelItem => item.SessionYear)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Label" class="btn btn-warning"><i class="bi bi-pen"></i>Edit</a>
-                <a asp-page="./Details" asp-route-id="@item.Label" class="btn btn-success"><i class="bi bi-eye-fill"></i>Details</a>
-                <a asp-page="./Delete" asp-route-id="@item.Label" class="btn btn-danger"><i class="bi bi-trash3"></i>Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning"><i class="bi bi-pen"></i>Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-success"><i class="bi bi-eye-fill"></i>Details</a>
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="bi bi-trash3"></i>Delete</a>
             </td>
         </tr>
 }
