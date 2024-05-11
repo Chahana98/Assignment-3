@@ -31,10 +31,16 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Guardian.Contact)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Guardian.Student)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Guardian.Student.Id)
+        </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Guardian.Id">Edit</a> 
+    <a asp-page="./Edit" asp-route-id="@Model.Guardian.Id" class="btn btn-success">Edit</a> 
     <a asp-page="./Index" class="btn btn-success">Back to List</a>
 </div>
 

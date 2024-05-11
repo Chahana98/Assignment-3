@@ -18,6 +18,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Guardian[0].Contact)
             </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Guardian[0].Student)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -36,6 +39,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Contact)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.Id)
+            </td><br>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning"><i class="bi bi-pen"></i>Edit</a> 
                 <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-success"><i class="bi bi-eye-fill"></i>Details</a> 

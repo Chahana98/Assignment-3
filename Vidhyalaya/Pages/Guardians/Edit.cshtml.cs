@@ -34,6 +34,7 @@ namespace Vidhyalaya.Pages_Guardians
                 return NotFound();
             }
             Guardian = guardian;
+             ViewData["StudentId"] =new SelectList(_context.Students, "Id", "Id");
             return Page();
         }
 
