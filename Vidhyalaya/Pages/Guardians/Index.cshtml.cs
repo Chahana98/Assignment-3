@@ -21,7 +21,8 @@ namespace Vidhyalaya.Pages_Guardians
 
         public async Task OnGetAsync()
         {
-            Guardian = await _context.Guardians.ToListAsync();
+            Guardian = await _context.Guardians.Include(x=>x.Student).ToListAsync();
+            // Guardian = await _context.Guardians.ToListAsync();
         }
     }
 }

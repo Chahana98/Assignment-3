@@ -16,7 +16,7 @@ namespace Vidhyalaya.Pages_Students
         {
             _context = context;
         }
-
+        
         [BindProperty]
         public Student Student { get; set; } = default!;
 
@@ -27,7 +27,10 @@ namespace Vidhyalaya.Pages_Students
                 return NotFound();
             }
 
-            var student = await _context.Students.FirstOrDefaultAsync(m => m.Id == id);
+            // var student = await _context.Students.FirstOrDefaultAsync(m => m.Id == id);
+            var student = await _context.Students
+            .Include(s => s.Grade) // Include Grade navigation property
+            .FirstOrDefaultAsync(m => m.Id == id);
 
             if (student == null)
             {
