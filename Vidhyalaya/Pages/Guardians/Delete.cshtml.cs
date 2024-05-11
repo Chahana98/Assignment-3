@@ -47,7 +47,10 @@ namespace Vidhyalaya.Pages_Guardians
                 return NotFound();
             }
 
-            var guardian = await _context.Guardians.FindAsync(id);
+            // var guardian = await _context.Guardians.FindAsync(id);
+              var guardian = await _context.Guardians
+              .Include(g => g.Student) // Include Student navigation property
+              .FirstOrDefaultAsync(m => m.Id == id);
             if (guardian != null)
             {
                 Guardian = guardian;
