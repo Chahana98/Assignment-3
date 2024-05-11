@@ -20,8 +20,7 @@ namespace Vidhyalaya.Pages_Students
 
         [BindProperty]
         public Student Student { get; set; } = default!;
-        public List<SelectListItem> Grades { get; set; }
-
+      
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -35,6 +34,7 @@ namespace Vidhyalaya.Pages_Students
                 return NotFound();
             }
             Student = student;
+            ViewData["GradeId"] =new SelectList(_context.Grades, "Id", "Id");
             return Page();
         }
 

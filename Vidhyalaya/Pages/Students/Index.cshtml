@@ -32,7 +32,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Student[0].IsActive)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].Grade)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -71,8 +73,9 @@
                 <td class="btn btn-success">
                     @Html.DisplayFor(modelItem => item.IsActive)
                 </td>
-                
-                <td></td>
+                 <td>
+                    @Html.DisplayFor(modelItem=> item.Grade.Id)
+                </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning"><i class="bi bi-pen"></i></a>
                     <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-success"><i class="bi bi-eye-fill"></i></a>
