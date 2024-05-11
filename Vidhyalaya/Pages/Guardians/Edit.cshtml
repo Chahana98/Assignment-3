@@ -1,0 +1,43 @@
+@page
+@model Vidhyalaya.Pages_Guardians.EditModel
+
+
+
+<h4>Guardian</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Guardian.Id" />
+            <div class="form-group">
+                <label asp-for="Guardian.FatherName" class="control-label"></label>
+                <input asp-for="Guardian.FatherName" class="form-control" />
+                <span asp-validation-for="Guardian.FatherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guardian.MotherName" class="control-label"></label>
+                <input asp-for="Guardian.MotherName" class="form-control" />
+                <span asp-validation-for="Guardian.MotherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guardian.Address" class="control-label"></label>
+                <input asp-for="Guardian.Address" class="form-control" />
+                <span asp-validation-for="Guardian.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guardian.Contact" class="control-label"></label>
+                <input asp-for="Guardian.Contact" class="form-control" />
+                <span asp-validation-for="Guardian.Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                 <a asp-page="./Index" class="btn btn-success">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

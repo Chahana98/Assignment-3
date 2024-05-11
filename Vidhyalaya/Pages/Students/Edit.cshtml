@@ -11,6 +11,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Student.Id" />
             <div class="form-group">
+                <label class="control-label">Id</label>
+                <select asp-for="Student.GradeId" asp-items="Model.Grades" class="form-control">
+                    <option selected value="@null">Select Id</option>
+                </select>
+            </div> 
+            <div class="form-group">
                 <label asp-for="Student.Name" class="control-label"></label>
                 <input asp-for="Student.Name" class="form-control" />
                 <span asp-validation-for="Student.Name" class="text-danger"></span>

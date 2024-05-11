@@ -1,0 +1,40 @@
+@page
+@model Vidhyalaya.Pages_Guardians.DetailsModel
+
+
+
+<div>
+    <h4>Guardian</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Guardian.FatherName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Guardian.FatherName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Guardian.MotherName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Guardian.MotherName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Guardian.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Guardian.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Guardian.Contact)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Guardian.Contact)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Guardian.Id">Edit</a> 
+    <a asp-page="./Index" class="btn btn-success">Back to List</a>
+</div>
+

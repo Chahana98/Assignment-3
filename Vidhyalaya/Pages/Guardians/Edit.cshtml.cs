@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace Vidhyalaya.Pages_Students
+namespace Vidhyalaya.Pages_Guardians
 {
     public class EditModel : PageModel
     {
@@ -19,8 +19,7 @@ namespace Vidhyalaya.Pages_Students
         }
 
         [BindProperty]
-        public Student Student { get; set; } = default!;
-        public List<SelectListItem> Grades { get; set; }
+        public Guardian Guardian { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,12 +28,12 @@ namespace Vidhyalaya.Pages_Students
                 return NotFound();
             }
 
-            var student =  await _context.Students.FirstOrDefaultAsync(m => m.Id == id);
-            if (student == null)
+            var guardian =  await _context.Guardians.FirstOrDefaultAsync(m => m.Id == id);
+            if (guardian == null)
             {
                 return NotFound();
             }
-            Student = student;
+            Guardian = guardian;
             return Page();
         }
 
@@ -47,7 +46,7 @@ namespace Vidhyalaya.Pages_Students
                 return Page();
             }
 
-            _context.Attach(Student).State = EntityState.Modified;
+            _context.Attach(Guardian).State = EntityState.Modified;
 
             try
             {
@@ -55,7 +54,7 @@ namespace Vidhyalaya.Pages_Students
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentExists(Student.Id))
+                if (!GuardianExists(Guardian.Id))
                 {
                     return NotFound();
                 }
@@ -68,9 +67,9 @@ namespace Vidhyalaya.Pages_Students
             return RedirectToPage("./Index");
         }
 
-        private bool StudentExists(int id)
+        private bool GuardianExists(int id)
         {
-            return _context.Students.Any(e => e.Id == id);
+            return _context.Guardians.Any(e => e.Id == id);
         }
     }
 }
